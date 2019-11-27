@@ -9,7 +9,7 @@ public class Ubicacion {
         this.y = y;
     }
 
-    /*
+    
     public int getX() {
         return x;
     }
@@ -17,7 +17,7 @@ public class Ubicacion {
     public int getY() {
         return y;
     }
-    */
+    
 
     public Estado setear(Seteable seteable, Ficha ficha){
         return seteable.set(this.x, this.y,ficha);

@@ -149,6 +149,48 @@ public class DojoTest {
         
     }
     
+    @Test
+    public void test_new() {
+    	
+    	ResolutorLineaSuperiorX res = new ResolutorLineaSuperiorX();
+    	res.evaluarcito(null);
+    }
+    
+    @Test
+    public void test_new2() {
+    	
+    	Tablero tablero = new TableroArrays(null);
+    	ResolutorLineaSuperiorX res = new ResolutorLineaSuperiorX();
+    	res.evaluarcito(tablero);
+    }
+    
+    @Test
+    public void test_new3() {
+    	
+    	Ficha ficha = new FichaX();
+    	Tablero tablero = new TableroArrays(null);
+    	ResolutorLineaSuperiorX res = new ResolutorLineaSuperiorX();
+    	Ubicacion ubicacion = new Ubicacion(0, 0);
+        Jugada jugada = new Jugada(ficha, ubicacion);
+      
+        tablero.jugar(jugada);
+        
+        ficha = new FichaX();
+        ubicacion = new Ubicacion(0, 1);
+        jugada = new Jugada(ficha, ubicacion);
+        tablero.jugar(jugada);
+
+        
+        ficha = new FichaX();
+        ubicacion = new Ubicacion(0, 2);
+        jugada = new Jugada(ficha, ubicacion);
+        tablero.jugar(jugada);
+
+        
+    	Estado estado = res.evaluarcito(tablero);
+    	Assert.assertEquals(new EstadoTexto("GANO X"), estado);
+    }
+    
     /*
      * Esta horrible como solucione
      * Los equals y hashCode me bajan la cobertura, como mejorar eso 

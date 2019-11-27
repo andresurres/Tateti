@@ -32,6 +32,12 @@ public class FichaX implements Ficha{
 			return false;
 		return true;
 	}
+
+	@Override
+	public boolean asignable() {
+		// TODO Auto-generated method stub
+		return false;
+	}
     
     
 }

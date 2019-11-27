@@ -41,7 +41,8 @@ public class TableroArrays implements Tablero,Seteable {
         /*grid[x][y] = ficha;
 
         return new EstadoTexto("Ok");*/
-    	if(new FichaVacia().equals(grid[x][y])) {
+    	//if(new FichaVacia().equals(grid[x][y])) {
+    	if(grid[x][y].asignable()) {
         	grid[x][y] = ficha;
         	return new EstadoTexto("Ok");
         }else {
@@ -52,6 +53,11 @@ public class TableroArrays implements Tablero,Seteable {
 	@Override
 	public Estado evaluar(IResolutor resolutor) {
 		return resolutor.evaluar(grid);
+	}
+
+	@Override
+	public boolean has(Ubicacion ubicacion, Ficha ficha) {
+		 return grid[ubicacion.getX()][ubicacion.getY()].equals(ficha);		
 	}
 
 }

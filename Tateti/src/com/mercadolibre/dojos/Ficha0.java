@@ -9,4 +9,12 @@ public class Ficha0 implements Ficha{
     public String toString() {
         return figura;
     }
+
+
+
+	@Override
+	public boolean asignable() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

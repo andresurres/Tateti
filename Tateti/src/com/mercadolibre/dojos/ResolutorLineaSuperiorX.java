@@ -11,5 +11,19 @@ public class ResolutorLineaSuperiorX implements IResolutor{
 			return new EstadoTexto("SIGA JUGANDO");
 		}
 	}
+	
+	
+	public Estado evaluarcito(Tablero tablero) {
+		Ubicacion upperLeft = new Ubicacion(0,0);
+		Ubicacion upperMiddle = new Ubicacion(0,1);
+		Ubicacion upperRigth = new Ubicacion(0,2);
+		
+		Ficha fichaX = new FichaX();
+		if(tablero.has(upperLeft, fichaX) && tablero.has(upperMiddle, fichaX) && tablero.has(upperRigth, fichaX)) {
+			return new EstadoTexto("GANO X");
+		}else {
+			return new EstadoTexto("SIGA JUGANDO");
+		}
+	}
 
 }
